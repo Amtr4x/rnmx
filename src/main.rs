@@ -49,3 +49,9 @@ fn _display_menu() {
     display_banner();
     println!("{menu}");
 }
+
+fn display_app_info() {
+    // TODO update donation info and version
+    let info = "author: Leandrys Osorio (Amtr4x)\nLicense: MIT\nrelease-version: 0.0b\n\n for donations read the README.md info at: https://github.com/";
+    println!("{info}");
+}
