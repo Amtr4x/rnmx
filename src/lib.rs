@@ -10,6 +10,7 @@ pub struct Asset(String);
 
 impl Asset {
     pub fn new(path: String) -> Self {
+        assert!(!path.is_empty());
         Self(path)
     }
 
