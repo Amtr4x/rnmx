@@ -1,23 +1,41 @@
 //! RNM tool definitions and test
 //! author: @Amtr4x
+use std::{
+    fs,
+    io::{self},
+    path::Path,
+};
 
-use std::io::Result;
+pub struct Asset(String);
 
-pub struct Asset<'a> {
-    asset_type: &'a str,
-    path: String,
-}
-
-impl<'a> Asset<'a> {
-    // asset_type can be identified by the path structure checking for / at the last char of the path
+impl Asset {
     pub fn new(path: String) -> Self {
-        Self {
-            asset_type: "",
-            path,
+        Self(path)
+    }
+
+    pub fn rename(&self, new_path: String) {
+        let path: &Path = Path::new(&self.0);
+
+        if Path::is_file(path) {
+            rename_file(&self.0, new_path).unwrap_or_else(|err| {
+                eprintln!("{err}");
+            });
+        } else {
+            rename_dir(&self.0, new_path).unwrap_or_else(|err| {
+                eprintln!("{err}");
+            });
         }
     }
+}
 
-    pub fn rename(&self, new_path: String) -> Result<u8> {
-        Ok(0)
-    }
+fn rename_file(path: &String, new_path: String) -> io::Result<()> {
+    assert!(Path::is_file(Path::new(&path)) && !new_path.ends_with('/'));
+    fs::rename(path, new_path)?;
+    Ok(())
+}
+
+fn rename_dir(path: &String, new_path: String) -> io::Result<()> {
+    assert!(Path::is_dir(Path::new(&path)) && new_path.ends_with('/'));
+    fs::rename(path, new_path)?;
+    Ok(())
 }
