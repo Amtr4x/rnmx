@@ -9,16 +9,18 @@ A rename CLI tool to make easy the process mainly in linux systems written in Ru
 
 ```bash
 # renaming a directory
-rnm -d my_folder/ my_renamed_folder/
+rnm -p my_folder/ my_renamed_folder/
 
-# renaming an archive
-rnm my_archive.ext my_renamed_archived.ext
+# renaming an archive using verbose arguments
+rnm --path my_archive.ext my_renamed_archived.ext
 ```
 
 
 ## Screenshots
 
+![rnm help query](./screenshots/help.png)
 
+![rnm success renaming](./screenshots/help.png)
 
 
 ## Usage
@@ -26,17 +28,19 @@ rnm my_archive.ext my_renamed_archived.ext
 ### Syntax
 
 ```bash
-rnm -flag (Optional) current_archive renamed_archive
+rnm -flag current_archive renamed_archive
+
+rnm -flag # to query extra info
 ```
 
 ### Flags
 
 ```bash
--d | --directory --> Identify if renaming is performed in a directory.
+-p, --path Specify the path to be renamed (Mandatory)
 
--h | --help --> Show help this help menu and exit.
+-h, --help Show this help menu and exit.
 
--i | --info --> Show tool info, repo link, author...
+-i, --info Show tool info, repo link, author...
 ```
 
 ## License
