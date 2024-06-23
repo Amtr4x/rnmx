@@ -20,7 +20,7 @@ rnm --path my_archive.ext my_renamed_archived.ext
 
 ![rnm help query](./screenshots/help.png)
 
-![rnm success renaming](./screenshots/help.png)
+![rnm success renaming](./screenshots/success.png)
 
 
 ## Usage
