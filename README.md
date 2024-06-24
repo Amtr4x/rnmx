@@ -1,7 +1,7 @@
 
 # Rename tool ( rnm )
 
-A rename CLI tool to make easy the process mainly in linux systems written in Rust.
+A rename CLI tool to make easy the process mainly in Linux systems written in Rust.
 
 
 
@@ -40,7 +40,7 @@ rnm -flag # to query extra info
 
 -h, --help Show this help menu and exit.
 
--i, --info Show tool info, repo link, author...
+-i, --info Show tool info, repository link, author...
 ```
 
 ## License
@@ -58,19 +58,27 @@ This tool and code can be distributed, edited or used under the [MIT](./LICENSE)
 Contributions are always welcome, 
 just explain your **PR** and let's merge!
 
+### Note for Devs
+
+When unit tests are executed, a file and a folder are created and then removed. If the test fails please check if you have another file or folder which is causing name conflicts. After the test failure, the file or folder tested will not be cleaned, you have to remove it automatically from the root of the project.
+
+#### names
+
+1. hello -> Creation name.
+2. bye -> Renaming name.
 
 ## FAQ
 
 #### Is secure to use this tool?
 
-Yes, completely secure. It is not a tool that need extra permissions or violate your OS permissions extructure. No telemetry or Adwares, just a cleaned tool.
+Yes, completely secure. It is not a tool that need extra permissions or violate your OS permissions structure. No telemetry or Adware, just a cleaned tool.
 
 #### Which OS ( Operative System ) is needed to use this tool?
 
 Currently you can use this tool in:
 - Windows 10 or superior.
 - Linux systems.
-- MacOS
+- Mac OS
 
 -- You can test the tool in a different OS, just main support is intended to these systems.
 
