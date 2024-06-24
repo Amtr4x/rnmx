@@ -39,7 +39,7 @@ fn display_menu() {
 
     -h, --help  Show this help menu and exit.
 
-    -i, --info  Show tool info, repo link, author...
+    -i, --info  Show tool info, repository link, author...
     
     Examples:
     # renaming a directory
