@@ -53,8 +53,7 @@ fn display_menu() {
 }
 
 fn display_app_info() {
-    // TODO update donation info and version
-    let info = "author: Leandrys Osorio (Amtr4x)\nLicense: MIT\nrelease-version: 1.0b\n\n for donations read the README.md info at: https://github.com/Amtr4x/rnm?tab=readme-ov-file#can-i-make-a-thank-you-donation";
+    let info = "author: Leandrys Osorio (Amtr4x)\nLicense: MIT\nrelease-version: 1.0\n\n for donations read the README.md info at: https://github.com/Amtr4x/rnm?tab=readme-ov-file#can-i-make-a-thank-you-donation";
     println!("{info}");
 }
 
