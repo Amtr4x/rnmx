@@ -57,6 +57,17 @@ fn display_app_info() {
     println!("{info}");
 }
 
+/// recover all necessary info to perform the renaming action.
+///
+/// ## Arguments
+/// * `args: Vec<String>` - vector where is or not the required fields for the renaming function.
+///
+/// ## Returns
+/// * `(Option<String>, Option<String>, Option<String>)` - a tuple with the following order (flag | path | new_name).
+///
+/// ## Note
+/// if the amount of arguments are different from 4, there is a possible syntax error and if better to return
+/// an error.
 fn parse_request<'a>(args: Vec<String>) -> (Option<String>, Option<String>, Option<String>) {
     if args.len() == 4 {
         (
@@ -69,6 +80,11 @@ fn parse_request<'a>(args: Vec<String>) -> (Option<String>, Option<String>, Opti
     }
 }
 
+/// Receive the arguments and perform the renaming process at convenience, listening at
+/// the amount of arguments provided, the function will return info or perform renaming.
+///
+/// ## Note
+/// Every error will be displayed as it is using the error console channel.
 pub fn setup() {
     let args = env::args().collect();
     let (flag, current_path, new_path) = parse_request(args);

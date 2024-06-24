@@ -47,6 +47,16 @@ impl Asset {
     }
 }
 
+/// Rename a file, ensuring that the current name and the new name
+/// are not typed as a directory path.
+///
+/// ## Arguments
+/// * `path: &String` - current path of the file.
+/// * `new_path: &String` - new name for the file.
+///
+/// ## Returns
+/// * `io:Result<()>` - an `Ok` after the file renaming and a console message indicating the success,
+/// if there is an error it will return it.
 fn rename_file(path: &String, new_path: &String) -> io::Result<()> {
     if !path.ends_with('/') && !new_path.ends_with('/') {
         fs::rename(path, new_path)?;
@@ -55,6 +65,16 @@ fn rename_file(path: &String, new_path: &String) -> io::Result<()> {
     Ok(())
 }
 
+/// Rename a folder, ensuring that the current name and the new name
+/// are written as a directory path.
+///
+/// ## Arguments
+/// * `path: &String` - current path of the directory.
+/// * `new_path: &String` - new name for the directory.
+///
+/// ## Returns
+/// * `io::Result<()>` - an `Ok` after the folder renaming and a console message indicating the success,
+/// if there is an error it will return it.
 fn rename_dir(path: &String, new_path: &String) -> io::Result<()> {
     if path.ends_with('/') && new_path.ends_with('/') {
         fs::rename(path, new_path)?;
