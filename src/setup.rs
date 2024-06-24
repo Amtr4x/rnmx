@@ -86,3 +86,25 @@ pub fn setup() {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::{fs, path::Path};
+
+    #[test]
+    fn rename_a_file() {
+        let new_file = "hello.txt";
+        let renamed_file = "bye.txt";
+        let asset = Asset::new(new_file.to_string());
+
+        // Create a testing directory with a file to rename
+        fs::File::create(&new_file).unwrap();
+
+        asset.rename(renamed_file.to_string());
+        assert!(Path::new(renamed_file).exists());
+
+        //clean the directory and the renamed file.
+        fs::remove_file(renamed_file).unwrap();
+    }
+}
