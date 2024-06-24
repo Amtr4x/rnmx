@@ -98,13 +98,25 @@ mod tests {
         let renamed_file = "bye.txt";
         let asset = Asset::new(new_file.to_string());
 
-        // Create a testing directory with a file to rename
         fs::File::create(&new_file).unwrap();
 
         asset.rename(renamed_file.to_string());
         assert!(Path::new(renamed_file).exists());
 
-        //clean the directory and the renamed file.
         fs::remove_file(renamed_file).unwrap();
+    }
+
+    #[test]
+    fn rename_a_directory() {
+        let folder_name = "hello";
+        let renamed_folder_name = "bye";
+        let asset = Asset::new(folder_name.to_string());
+
+        fs::create_dir(folder_name).unwrap();
+
+        asset.rename(renamed_folder_name.to_string());
+        assert!(Path::try_exists(Path::new(renamed_folder_name)).unwrap());
+
+        fs::remove_dir(renamed_folder_name).unwrap();
     }
 }
