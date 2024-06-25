@@ -2,10 +2,10 @@
 //! author: @Amtr4x
 use std::env;
 
-use rnm::Asset;
+use rnmx::Asset;
 
 fn display_banner() {
-    let tool_name: &str = "RENAME TOOL";
+    let tool_name: &str = "RENAME TOOL (Renamix)";
     let padding: String = " ".repeat(4);
 
     println!("{padding}{}", "#".repeat(tool_name.len() + 8));
@@ -31,8 +31,8 @@ fn display_menu() {
     Rename a file or folder in the specified path.
     
     Syntax:    
-    rnm -flag current_archive renamed_archive
-    rnm -flag # to query extra info
+    rnmx -flag current_archive renamed_archive
+    rnmx -flag # to query extra info
 
     Flags:
     -p, --path Specify the path to be renamed (Mandatory).
@@ -43,17 +43,17 @@ fn display_menu() {
     
     Examples:
     # renaming a directory
-    rnm -p my_folder/ my_renamed_folder/
+    rnmx -p my_folder/ my_renamed_folder/
 
     # renaming an archive using verbose arguments
-    rnm --path my_archive.ext my_renamed_archived.ext
+    rnmx --path my_archive.ext my_renamed_archived.ext
     ";
     display_banner();
     println!("{menu}");
 }
 
 fn display_app_info() {
-    let info = "author: Leandrys Osorio (Amtr4x)\nLicense: MIT\nrelease-version: 1.0\n\n for donations read the README.md info at: https://github.com/Amtr4x/rnm?tab=readme-ov-file#can-i-make-a-thank-you-donation";
+    let info = "author: Leandrys Osorio (Amtr4x)\nLicense: MIT\nrelease-version: 1.0\n\n for donations read the README.md info at: https://github.com/Amtr4x/rnmx?tab=readme-ov-file#can-i-make-a-thank-you-donation";
     println!("{info}");
 }
 

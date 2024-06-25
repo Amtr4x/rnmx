@@ -1,5 +1,5 @@
 
-# Rename tool ( rnm )
+# Rename tool ( Renamix )
 
 A rename CLI tool to make easy the process mainly in Linux systems written in Rust.
 
@@ -9,18 +9,18 @@ A rename CLI tool to make easy the process mainly in Linux systems written in Ru
 
 ```bash
 # renaming a directory
-rnm -p my_folder/ my_renamed_folder/
+rnmx -p my_folder/ my_renamed_folder/
 
 # renaming an archive using verbose arguments
-rnm --path my_archive.ext my_renamed_archived.ext
+rnmx --path my_archive.ext my_renamed_archived.ext
 ```
 
 
 ## Screenshots
 
-![rnm help query](./screenshots/help.png)
+![rnmx help query](./screenshots/help.png)
 
-![rnm success renaming](./screenshots/success.png)
+![rnmx success renaming](./screenshots/success.png)
 
 
 ## Usage
@@ -28,9 +28,9 @@ rnm --path my_archive.ext my_renamed_archived.ext
 ### Syntax
 
 ```bash
-rnm -flag current_archive renamed_archive
+rnmx -flag current_archive renamed_archive
 
-rnm -flag # to query extra info
+rnmx -flag # to query extra info
 ```
 
 ### Flags
