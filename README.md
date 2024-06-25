@@ -3,7 +3,11 @@
 
 A rename CLI tool to make easy the process mainly in Linux systems written in Rust.
 
+## Install
 
+```bash
+cargo install rnmx
+```
 
 ## Examples
 
