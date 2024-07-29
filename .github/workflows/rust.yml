@@ -27,5 +27,13 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install dependencies
         run: sudo apt install -y devscripts debhelper-compat cargo
+      - name: Get filename
+        id: filename
+        run: echo "filename=$(dpkg-parsechangelog -S Source)_$(dpkg-parsechangelog -S Version)" >> $GITHUB_ENV
       - name: Build deb file
         run: debuild -i -us -uc -b
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4 
+        with:
+          name: ${{ env.filename }}_all.deb
+          path: /home/runner/work/rnmx/${{ env.filename }}_all.deb
