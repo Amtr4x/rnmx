@@ -12,9 +12,17 @@ env:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
     - uses: actions/checkout@v4
     - name: Run tests
       run: cargo test --verbose
+
+  build-deb:
+
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: Build .deb file
+      run: sudo apt install devscripts debhelper-compat && debuild -i -us -uc -b
