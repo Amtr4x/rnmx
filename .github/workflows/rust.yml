@@ -29,3 +29,8 @@ jobs:
         run: sudo apt install -y devscripts debhelper-compat cargo
       - name: Build deb file
         run: debuild -i -us -uc -b
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4 
+        with:
+          name: deb-all
+          path: ../rnmx*.*
