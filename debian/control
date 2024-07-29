@@ -1,0 +1,15 @@
+Source: rnmx
+Section: utils
+Priority: optional
+Maintainer: Anonyzard <anonyzard@loc-os.com>
+Build-Depends: debhelper-compat (= 13), cargo
+Standards-Version: 4.5.1
+Homepage: https://github.com/Amtr4x/rnmx
+Vcs-Browser: https://github.com/Amtr4x/rnmx 
+Vcs-Git: https://github.com/Amtr4x/rnmx.git
+
+Package: rnmx
+Architecture: all
+Depends: libc6
+Description: A rename CLI tool written in rust.
+ A rename CLI tool to make easy the process mainly in Linux systems written in Rust.
