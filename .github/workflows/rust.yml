@@ -2,32 +2,30 @@ name: Rust
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 env:
   CARGO_TERM_COLOR: always
 
 jobs:
   build:
-
     runs-on: ubuntu-22.04
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build
-      run: cargo build --verbose
-    - name: Run tests
-      run: cargo test --verbose
+      - uses: actions/checkout@v4
+      - name: Build
+        run: cargo build --verbose
+      - name: Run tests
+        run: cargo test --verbose
 
   build-deb:
-
     runs-on: ubuntu-22.04
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Install dependencies
-      run: sudo apt install -y devscripts debhelper-compat
-    - name: Build deb file
-      run: debuild -i -us -uc -b
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: sudo apt install -y devscripts debhelper-compat cargo
+      - name: Build deb file
+        run: debuild -i -us -uc -b
