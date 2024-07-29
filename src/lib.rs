@@ -26,7 +26,7 @@ impl Asset {
     ///
     /// ## Example
     /// ```rust
-    /// use rnm::Asset;
+    /// use rnmx::Asset;
     ///
     /// // Simulate creating a new asset instance for a file
     /// let file_path = Asset::new(String::from("hello.txt"));
